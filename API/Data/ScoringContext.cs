@@ -7,7 +7,7 @@ namespace API.Data
     {
         public ScoringContext(DbContextOptions options) : base(options)
         {
-            
+
         }
 
         public DbSet<Series> Series { get; set; }

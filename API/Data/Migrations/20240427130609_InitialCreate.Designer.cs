@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(ScoringContext))]
-    [Migration("20240427114443_InitialCreate")]
+    [Migration("20240427130609_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -51,7 +51,7 @@ namespace API.Data.Migrations
                     b.Property<int>("TeamTwoScore")
                         .HasColumnType("int");
 
-                    b.Property<int>("VictorId")
+                    b.Property<int?>("VictorId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -103,13 +103,7 @@ namespace API.Data.Migrations
                     b.Property<int>("MatchType")
                         .HasColumnType("int");
 
-                    b.Property<int>("TeamOneId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TeamOneScore")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeamTwoId")
                         .HasColumnType("int");
 
                     b.Property<int>("TeamTwoScore")
@@ -119,14 +113,10 @@ namespace API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VictorId")
+                    b.Property<int?>("VictorId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("TeamOneId");
-
-                    b.HasIndex("TeamTwoId");
 
                     b.HasIndex("VictorId");
 
@@ -148,7 +138,12 @@ namespace API.Data.Migrations
                     b.Property<int>("NumPlayers")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SeriesId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("SeriesId");
 
                     b.ToTable("Teams");
                 });
@@ -168,7 +163,7 @@ namespace API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TeamId")
+                    b.Property<int?>("TeamId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -188,9 +183,7 @@ namespace API.Data.Migrations
 
                     b.HasOne("API.Entities.Team", "Victor")
                         .WithMany()
-                        .HasForeignKey("VictorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("VictorId");
 
                     b.Navigation("Series");
 
@@ -216,38 +209,25 @@ namespace API.Data.Migrations
 
             modelBuilder.Entity("API.Entities.Series", b =>
                 {
-                    b.HasOne("API.Entities.Team", "TeamOne")
-                        .WithMany()
-                        .HasForeignKey("TeamOneId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("API.Entities.Team", "TeamTwo")
-                        .WithMany()
-                        .HasForeignKey("TeamTwoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("API.Entities.Team", "Victor")
                         .WithMany()
-                        .HasForeignKey("VictorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TeamOne");
-
-                    b.Navigation("TeamTwo");
+                        .HasForeignKey("VictorId");
 
                     b.Navigation("Victor");
+                });
+
+            modelBuilder.Entity("API.Entities.Team", b =>
+                {
+                    b.HasOne("API.Entities.Series", null)
+                        .WithMany("Teams")
+                        .HasForeignKey("SeriesId");
                 });
 
             modelBuilder.Entity("API.Entities.TeamMember", b =>
                 {
                     b.HasOne("API.Entities.Team", "Team")
                         .WithMany("Members")
-                        .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeamId");
 
                     b.Navigation("Team");
                 });
@@ -260,6 +240,8 @@ namespace API.Data.Migrations
             modelBuilder.Entity("API.Entities.Series", b =>
                 {
                     b.Navigation("Matches");
+
+                    b.Navigation("Teams");
                 });
 
             modelBuilder.Entity("API.Entities.Team", b =>

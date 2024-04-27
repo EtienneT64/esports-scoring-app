@@ -18,14 +18,7 @@ namespace API.Entities
 
         [DisplayFormat(NullDisplayText = "Series in progress")]
         public Team? Victor { get; set; }
-        public int VictorId { get; set; }
-
-        public int TeamOneId { get; set; }
-        public Team TeamOne { get; set; }
-
-        public int TeamTwoId { get; set; }
-        public Team TeamTwo { get; set; }
-
+        public ICollection<Team> Teams {get; set; } = new List<Team>();
         public ICollection<Match> Matches { get; set; } = new List<Match>();
     }
 }
