@@ -1,0 +1,26 @@
+[
+  {
+    "Title": "Vitality vs Faze",
+    "Date": "2022-04-27T13:30:00",
+    "FirstToWins": 2,
+    "TeamOneScore": 0,
+    "TeamTwoScore": 2,
+    "VictorId": 2
+  },
+  {
+    "Title": "Faze vs Astralis",
+    "Date": "2022-04-28T14:30:00",
+    "FirstToWins": 1,
+    "TeamOneScore": 1,
+    "TeamTwoScore": 0,
+    "VictorId": 2
+  },
+  {
+    "Title": "Astralis vs Vitality",
+    "Date": "2022-04-29T15:30:00",
+    "FirstToWins": 1,
+    "TeamOneScore": 1,
+    "TeamTwoScore": 0,
+    "VictorId": 1
+  }
+]

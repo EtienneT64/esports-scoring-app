@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -57,7 +58,7 @@ namespace Infrastructure.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MatchType = table.Column<int>(type: "int", nullable: false),
+                    FirstToWins = table.Column<int>(type: "int", nullable: false),
                     TeamOneScore = table.Column<int>(type: "int", nullable: false),
                     TeamTwoScore = table.Column<int>(type: "int", nullable: false),
                     VictorId = table.Column<int>(type: "int", nullable: true)

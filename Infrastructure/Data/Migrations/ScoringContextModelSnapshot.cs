@@ -97,7 +97,7 @@ namespace Infrastructure.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("MatchType")
+                    b.Property<int>("FirstToWins")
                         .HasColumnType("int");
 
                     b.Property<int>("TeamOneScore")

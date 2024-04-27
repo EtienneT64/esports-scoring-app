@@ -1,0 +1,82 @@
+[
+  {
+    "RoundNumber": 1,
+    "RoundWinnerId": 3,
+    "MatchId": 1
+  },
+  {
+    "RoundNumber": 2,
+    "RoundWinnerId": 3,
+    "MatchId": 1
+  },
+  {
+    "RoundNumber": 3,
+    "RoundWinnerId": 2,
+    "MatchId": 1
+  },
+  {
+    "RoundNumber": 4,
+    "RoundWinnerId": 2,
+    "MatchId": 1
+  },
+  {
+    "RoundNumber": 5,
+    "RoundWinnerId": 2,
+    "MatchId": 1
+  },
+  {
+    "RoundNumber": 1,
+    "RoundWinnerId": 2,
+    "MatchId": 2
+  },
+  {
+    "RoundNumber": 2,
+    "RoundWinnerId": 2,
+    "MatchId": 2
+  },
+  {
+    "RoundNumber": 3,
+    "RoundWinnerId": 3,
+    "MatchId": 2
+  },
+  {
+    "RoundNumber": 4,
+    "RoundWinnerId": 3,
+    "MatchId": 2
+  },
+  {
+    "RoundNumber": 5,
+    "RoundWinnerId": 2,
+    "MatchId": 2
+  },
+  {
+    "RoundNumber": 1,
+    "RoundWinnerId": 1,
+    "MatchId": 3
+  },
+  {
+    "RoundNumber": 2,
+    "RoundWinnerId": 2,
+    "MatchId": 3
+  },
+  {
+    "RoundNumber": 3,
+    "RoundWinnerId": 2,
+    "MatchId": 3
+  },
+  {
+    "RoundNumber": 1,
+    "RoundWinnerId": 1,
+    "MatchId": 4
+  },
+  {
+    "RoundNumber": 2,
+    "RoundWinnerId": 3,
+    "MatchId": 4
+  },
+  {
+    "RoundNumber": 3,
+    "RoundWinnerId": 1,
+    "MatchId": 4
+  }
+]

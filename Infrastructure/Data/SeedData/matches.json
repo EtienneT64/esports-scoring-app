@@ -1,0 +1,38 @@
+[
+  {
+    "MatchNumber": 1,
+    "NumberOfRounds": 5,
+    "FirstToWins": 3,
+    "TeamOneScore": 3,
+    "TeamTwoScore": 2,
+    "VictorId": 3,
+    "SeriesId": 1
+  },
+  {
+    "MatchNumber": 2,
+    "NumberOfRounds": 5,
+    "FirstToWins": 3,
+    "TeamOneScore": 2,
+    "TeamTwoScore": 3,
+    "VictorId": 2,
+    "SeriesId": 1
+  },
+  {
+    "MatchNumber": 1,
+    "NumberOfRounds": 3,
+    "FirstToWins": 2,
+    "TeamOneScore": 2,
+    "TeamTwoScore": 1,
+    "VictorId": 2,
+    "SeriesId": 2
+  },
+  {
+    "MatchNumber": 1,
+    "NumberOfRounds": 3,
+    "FirstToWins": 2,
+    "TeamOneScore": 3,
+    "TeamTwoScore": 0,
+    "VictorId": 1,
+    "SeriesId": 3
+  }
+]
