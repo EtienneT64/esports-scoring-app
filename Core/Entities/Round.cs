@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace API.Entities
+namespace Core.Entities
 {
     public class Round
     {
@@ -8,7 +8,7 @@ namespace API.Entities
         public int RoundNumber { get; set; }
 
         [DisplayFormat(NullDisplayText = "Round in progress")]
-        public Team? RoundWinner { get; set; }
+        public Team RoundWinner { get; set; }
         public Match Match { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace API.Entities
+namespace Core.Entities
 {
     public enum MatchType {
         Bo1 = 1,
@@ -17,7 +17,7 @@ namespace API.Entities
         public int TeamTwoScore { get; set; }
 
         [DisplayFormat(NullDisplayText = "Series in progress")]
-        public Team? Victor { get; set; }
+        public Team Victor { get; set; }
         public ICollection<Team> Teams {get; set; } = new List<Team>();
         public ICollection<Match> Matches { get; set; } = new List<Match>();
     }
