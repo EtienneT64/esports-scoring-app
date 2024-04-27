@@ -2,9 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core.Entities
 {
-    public class Match
+    public class Match : BaseEntity
     {
-        public int Id { get; set; }
         public int MatchNumber { get; set; }
         public int NumberOfRounds { get; set; }
         public int FirstToWins { get; set; }

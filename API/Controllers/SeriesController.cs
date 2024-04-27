@@ -1,24 +1,29 @@
+using Core.Entities;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     public class SeriesController : ControllerBase
     {
-        public SeriesController()
+        private readonly ISeriesRepository _seriesRepository;
+        public SeriesController(ISeriesRepository seriesRepository)
         {
-
+            _seriesRepository = seriesRepository;
         }
 
         [HttpGet]
-        public string GetProducts()
+        public async Task<ActionResult<List<Series>>> GetSeries()
         {
-            return "this will be a list of series";
+            var series = await _seriesRepository.GetSeriesAsync();
+
+            return Ok(series);
         }
 
         [HttpGet("{id}")]
-        public string GetProduct(int id)
+        public async Task<ActionResult<Series>> GetSeries(int id)
         {
-            return "this will be a list of series";
+            return await _seriesRepository.GetSeriesByIdAsync(id);
         }
     }
 }

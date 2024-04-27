@@ -2,9 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core.Entities
 {
-    public class Round
+    public class Round : BaseEntity
     {
-        public int Id { get; set; }
         public int RoundNumber { get; set; }
 
         [DisplayFormat(NullDisplayText = "Round in progress")]

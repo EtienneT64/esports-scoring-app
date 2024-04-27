@@ -7,9 +7,8 @@ namespace Core.Entities
         Bo3= 2,
         Bo5 = 3
     }
-    public class Series
+    public class Series : BaseEntity
     {
-        public int Id { get; set; }
         public string Title { get; set; } = "";
         public DateTime Date { get; set; }
         public MatchType MatchType { get; set; }
