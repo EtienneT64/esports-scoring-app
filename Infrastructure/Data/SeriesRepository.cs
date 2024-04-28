@@ -14,12 +14,20 @@ namespace Infrastructure.Data
 
         public async Task<Series> GetSeriesByIdAsync(int id)
         {
-            return await _context.Series.FindAsync(id);
+            return await _context.Series
+            .Include(s => s.Victor)
+            .Include(s => s.Teams)
+            .Include(s => s.Matches)
+            .FirstOrDefaultAsync(s => s.Id == id);
         }
 
         public async Task<List<Series>> GetSeriesAsync()
         {
-            return await _context.Series.ToListAsync();
+            return await _context.Series
+            .Include(s => s.Victor)
+            .Include(s => s.Teams)
+            .Include(s => s.Matches)
+            .ToListAsync();
         }
 
     }

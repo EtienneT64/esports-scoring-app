@@ -4,6 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(opt => opt.AddPolicy("CorsPolicy", policy =>
+{
+    policy.AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithOrigins("https://localhost:4200");
+}));
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -14,6 +21,7 @@ builder.Services.AddDbContext<ScoringContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
 builder.Services.AddScoped<ISeriesRepository, SeriesRepository>();
 
 var app = builder.Build();
@@ -26,6 +34,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
