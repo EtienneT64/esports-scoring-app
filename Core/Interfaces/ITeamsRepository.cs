@@ -8,6 +8,6 @@ namespace Core.Interfaces
         Task<List<Team>> GetTeamsAsync();
         Task<Team> UpdateTeamByIdAsync(Team team);
         Task<Team> DeleteTeamByIdAsync(int id);
-        Task<Team> CreateTeamByIdAsync(Team team);
+        Task<Team> CreateTeamAsync(Team team);
     }
 }

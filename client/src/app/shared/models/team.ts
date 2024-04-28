@@ -1,6 +1,6 @@
 export interface Team {
-  id: number;
+  id?: number;
   name: string;
   numPlayers: number;
-  members: any[];
+  members?: any[];
 }

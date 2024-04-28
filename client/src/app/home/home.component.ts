@@ -15,10 +15,25 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.matchingService.getSeries().subscribe({
       next: (response: any) => {
-        console.log(response);
         this.series = response;
       },
       error: (error) => console.log(error),
     });
+  }
+
+  displayBestOf(firstToWins: number) {
+    switch (firstToWins) {
+      case 1:
+        return 'Bo1';
+
+      case 2:
+        return 'Bo3';
+
+      case 3:
+        return 'Bo5';
+
+      default:
+        return 'N/A';
+    }
   }
 }

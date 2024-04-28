@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ResultsComponent } from './results/results.component';
 import { TeamsComponent } from './teams/teams.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,17 +17,17 @@ import { HomeComponent } from './home/home.component';
     NavBarComponent,
     ResultsComponent,
     TeamsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  title = 'Esports Matching!';
-}
+export class AppModule {}

@@ -11,7 +11,7 @@ namespace Infrastructure.Data
         {
             _context = context;
         }
-        public async Task<Team> CreateTeamByIdAsync(Team team)
+        public async Task<Team> CreateTeamAsync(Team team)
         {
             _context.Teams.Add(team);
             await _context.SaveChangesAsync();

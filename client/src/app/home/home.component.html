@@ -7,22 +7,22 @@
         <tr>
           <td class="team-cell">
             <div class="line-align team1">
-              <div class="team">{{ serie.teamOne }}</div>
+              <div class="team">{{ serie.title.split(' ')[0] }}</div>
             </div>
           </td>
           <td class="result-score">
-            <span class="score-won">{{ serie.teamOneScore }}</span> -
-            <span class="score-lost">{{ serie.teamTwoScore }}</span>
+            <span [ngClass]="{ 'score-won': serie.teamOneScore > serie.teamTwoScore, 'score-lost': serie.teamOneScore < serie.teamTwoScore}">{{ serie.teamOneScore }}</span> -
+            <span [ngClass]="{ 'score-won': serie.teamOneScore < serie.teamTwoScore, 'score-lost': serie.teamOneScore > serie.teamTwoScore}">{{ serie.teamTwoScore }}</span>
           </td>
           <td class="team-cell">
             <div class="line-align team2">
-              <div class="team">{{ serie.teamTwo }}</div>
+              <div class="team">{{ serie.title.split(' ')[2] }}</div>
             </div>
           </td>
           <td class="star-cell">
             <div class="map-and-stars">
               <div class="stars"><i class="fa fa-star star"></i></div>
-              <div class="map map-text">{{serie.firstToWins}}</div>
+              <div class="map map-text">{{ displayBestOf(serie.firstToWins) }}</div>
             </div>
           </td>
         </tr>
