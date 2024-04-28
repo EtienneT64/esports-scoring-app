@@ -1,0 +1,55 @@
+.result {
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+.team-cell {
+  width: 25%;
+}
+
+.team {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.team-won {
+  color: green;
+}
+
+.score-won {
+  color: green;
+}
+
+.score-lost {
+  color: red;
+}
+
+.map-and-stars {
+  display: flex;
+  align-items: center;
+}
+
+.map {
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.stars {
+  color: gold;
+}
+
+.star {
+  font-size: 20px;
+}
