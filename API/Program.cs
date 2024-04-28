@@ -24,6 +24,7 @@ builder.Services.AddDbContext<ScoringContext>(opt =>
 });
 
 builder.Services.AddScoped<ISeriesRepository, SeriesRepository>();
+builder.Services.AddScoped<ITeamsRepository, TeamsRepository>();
 
 var app = builder.Build();
 

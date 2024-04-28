@@ -6,11 +6,14 @@ import { Series } from './models/series';
   providedIn: 'root',
 })
 export class MatchingService {
-  series: Series[] = [];
 
   constructor(private http: HttpClient) {}
 
   getSeries() {
     return this.http.get<Series>('https://localhost:7060/api/series');
+  }
+
+  getTeams() {
+    return this.http.get<Series>('https://localhost:7060/api/teams')
   }
 }

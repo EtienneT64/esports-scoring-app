@@ -30,5 +30,19 @@ namespace Infrastructure.Data
             .ToListAsync();
         }
 
+        public Task<Series> UpdateSeriesByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Series> DeleteSeriesByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Series> CreateSeriesByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

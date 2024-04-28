@@ -1,3 +1,9 @@
-<div class="container" style="margin-top: 140px;">
-    <h1>Teams</h1>
+<div class="container" style="margin-top: 140px">
+  <h1>Teams</h1>
+  <div *ngFor="let team of teams" class="card mb-3">
+    <div class="card-header">{{ team.name }}</div>
+    <div class="card-body">
+      <p class="card-text">Number of Players: {{ team.numPlayers }}</p>
+    </div>
+  </div>
 </div>

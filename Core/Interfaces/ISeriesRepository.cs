@@ -6,5 +6,9 @@ namespace Core.Interfaces
     {
         Task<Series> GetSeriesByIdAsync(int id);
         Task<List<Series>> GetSeriesAsync();
+        Task<Series> UpdateSeriesByIdAsync(int id);
+        Task<Series> DeleteSeriesByIdAsync(int id);
+        Task<Series> CreateSeriesByIdAsync(int id);
+
     }
 }
